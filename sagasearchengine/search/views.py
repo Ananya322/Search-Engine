@@ -10,7 +10,7 @@ def index(request):
 def search(request):
     if request.method == 'POST':
         search = request.POST['search']
-        url = 'https://www.google.com/search?q='+search
+        url = 'https://www.ask.com/web?q='+search
         res = requests.get(url)
         soup = bs(res.text, 'lxml')
 
@@ -32,4 +32,3 @@ def search(request):
         return render(request, 'search.html', context)
     else:
         return render(request, 'search.html')
-
